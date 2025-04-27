@@ -4,13 +4,13 @@ import { useAuth } from './AuthContext';
 
 const Login = () => {
     const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const { login } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        login(username, email);
+        login(username, password);
         navigate('/');
     };
 
@@ -27,10 +27,10 @@ const Login = () => {
                         required
                     />
                     <input
-                        type="email"
-                        placeholder="Enter your Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        type="text"
+                        placeholder="Enter your Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                     <div className="logbutmain">
